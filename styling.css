@@ -17,3 +17,9 @@
 #Test{
 	display:none;
 }
+
+#detail{
+        font-size:30px;
+        font-weight:bold;
+        color:#FF00FF;
+}

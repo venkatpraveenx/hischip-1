@@ -15,7 +15,7 @@
 	  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/FezVrasta/bootstrap-material-design/master/dist/css/bootstrap-material-design.css">
 	  
 	  <link rel="stylesheet" type="text/css" href="styling.css">
-
+</head>
 
 <body>
 	
@@ -50,16 +50,7 @@
 				<p id="Welcome">Welcome!</p>
 				<input id="loginButton" type="button" value="Login"></input>
 				<input id="logoutButton" type="button" value="Logout"></input>
-                                <br>
-                                <p> User details </p>
-                                <input id="details_status" type="button" value="Get Status"></input><br>
-                                <input id="details_accessToken" type="button" value="Get Access Token"></input><br>
-                                <input id="details_expiresIn" type="button" value="Token Expires In"></input><br>
-                                <input id="details_signedRequest" type="button" value="Signed Request"></input><br>
-                                <input id="details_userID" type="button" value="Get User ID"></input><br>
-                                <input id="API_Calls" type="button" value="make Api calls"></input><br>
-			</div>
-			<div id="detail"></div>
+				
 		</div>
 
 

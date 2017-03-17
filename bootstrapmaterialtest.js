@@ -4,8 +4,11 @@ var mainDetails;
 $('#loginButton').click(function(){
      FB.login(function(response){
           userDetails = response;
+		  window.location = "indexpage.php"
        });
   });
+  
+  
 $('#logoutButton').click(function(){
      FB.logout(function(response){
           userDetails = response;
@@ -36,26 +39,3 @@ $('#API_Calls').click(function(){
         alert('Name is '+mainDetails.name+'\n ID is '+mainDetails.id);
      });
   });
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-

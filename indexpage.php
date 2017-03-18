@@ -77,13 +77,22 @@
 	
 	
 	<div class="well">
-		<div id="Name">Name: </div>
-	
-		<div id="Gender">Gender: </div>
-	
-		<div id="DOB">DOB: </div>
-	
-		<div id="Email">E-mail: </div>
+		
+		<div> 
+			<div class="info">Name: </div><div id="Name" class="info"></div>
+		</div>
+		
+		<div> 
+			<div class="info">Gender: </div><div id="Gender" class="info"></div> 
+		</div>
+		
+		<div> 
+			<div class="info">DOB: </div><div id="DOB" class="info"></div> 
+		</div>
+		
+		<div> 
+			<div class="info">E-Mail: </div><div id="Email" class="info"></div> 
+		</div>
 	</div>
 	
 

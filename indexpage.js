@@ -8,13 +8,12 @@ $('#LogIn').click(function(){
 $('#CheckStatus').click(function(){
 	
 	FB.api('/me?fields=name,gender,birthday,email', function(response){
-
 		
-		$("#Name").append(response.name);
-		$("#Gender").append(response.gender);
-		$("#DOB").append(response.birthday);
-		$("#Email").append(response.email);
 		
+		document.getElementById('Name').innerHTML = response.name;
+		document.getElementById('Gender').innerHTML = response.gender;
+		document.getElementById('DOB').innerHTML = response.birthday;
+		document.getElementById('Email').innerHTML = response.email;
 	})
 });
 

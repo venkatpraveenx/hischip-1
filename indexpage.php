@@ -38,15 +38,53 @@
 	     js.src = "//connect.facebook.net/en_US/sdk.js";
 	     fjs.parentNode.insertBefore(js, fjs);
 	   }(document, 'script', 'facebook-jssdk'));
+	   
+	 
 	</script>
 	   
 	   
-	   
 
-	<h2>This is the index page</h2>
+	<div class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="javascript:void(0)">Site-Name</a>
+	    </div>
+	    <div class="navbar-collapse collapse navbar-responsive-collapse">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="javascript:void(0)">My Friends</a></li>
+	      </ul>
+	      
+		  
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="javascript:void(0)">Log Out</a></li>
+			
+			<li id="LogIn"> <div class="fb-login-button" data-scope="email,user_birthday,user_hometown,user_location,user_website,user_work_history,user_about_me
+			" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">Login</div>
+			
+			<li id="CheckStatus"><a href="javascript:void(0)">Check Status</a></li>
+			
+	      </ul>
+	    </div>
+	  </div>
+	</div>
 	
 	
-	<div id="detail"></div>
+	
+	
+	<div class="well">
+		<div id="Name">Name: </div>
+	
+		<div id="Gender">Gender: </div>
+	
+		<div id="DOB">DOB: </div>
+	
+		<div id="Email">E-mail: </div>
+	</div>
 	
 
 <script type="text/javascript" src="jquery.js"></script>

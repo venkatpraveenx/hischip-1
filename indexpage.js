@@ -1,14 +1,20 @@
-$(document).ready(function(){
+$('#LogIn').click(function(){
 	
-    FB.getLoginStatus(function(response){
-    	
-		if(response.status === 'connected'){
-			alert('connected');
-		}
+    FB.login(function(response){
+         userDetails = response;
+      },{scope: 'user_location', return_scopes:true});
+});
+
+$('#CheckStatus').click(function(){
+	
+	FB.api('/me?fields=name,gender,birthday,email', function(response){
+
 		
-		else{
-			alert('Not Connected');
-		}
-    });
-	
-})
+		$("#Name").append(response.name);
+		$("#Gender").append(response.gender);
+		$("#DOB").append(response.birthday);
+		$("#Email").append(response.email);
+		
+	})
+});
+

@@ -147,7 +147,7 @@
                      <?php 
 				   $graphObject = $response->getGraphObject();
 				   $userNode= $graphObject->getProperty("birthday");
-				   
+				   echo date_format($userNode,'d-m-y');
 				   ?>
             </div>
 		</div>

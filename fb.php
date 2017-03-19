@@ -11,10 +11,8 @@
 
   $helper = $fb->getRedirectLoginHelper();
 
-  $permissions = ['email','user_birthday',];
-  $loginUrl = $helper->getLoginUrl('http://localhost/hischip-1-branch2/indexpage.php', $permissions);
-
-
+  $permissions = ['email'];
+  $loginUrl = $helper->getLoginUrl('http://localhost/Codes/Intern/branch/indexpage.php', $permissions);
 
 ?>
 
@@ -38,6 +36,31 @@
 </head>
 
 <body>
+
+
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '1751632425141071',
+		      xfbml      : true,
+		      version    : 'v2.8'
+		    });
+		    FB.AppEvents.logPageView();
+		  };
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+   
+		   
+		 });
+		</script>
+
+
 
 
 

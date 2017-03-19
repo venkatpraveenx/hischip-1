@@ -9,7 +9,7 @@
   'default_graph_version' => 'v2.2',
   ]);
 
-    // GETTING THE ACCESS TOKEN' PROCESS
+   // GETTING THE ACCESS TOKEN' PROCESS
     $helper = $fb->getRedirectLoginHelper();
     try {
       $accessToken = $helper->getAccessToken();
@@ -28,6 +28,19 @@
       $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
 
 
+      // retrieving data from fb part.
+      try {
+        $response = $fb->get('/me?fields=name,gender,birthday,email');
+        $userNode = $response->getGraphUser();
+      } catch(Facebook\Exceptions\FacebookResponseException $e) {
+               echo 'Graph returned an error: ' . $e->getMessage();
+        exit;
+      } catch(Facebook\Exceptions\FacebookSDKException $e) {
+               echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
+      }
+
+	  
 ?>
 
 <DOCTYPE html>
@@ -51,6 +64,32 @@
 </head>
 
 <body>
+	
+	
+	
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1751632425141071',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+ 
+</script>
+	
+	
+	
 
 
 	<div class="navbar navbar-default">
@@ -70,8 +109,13 @@
 	      
 		  
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="logout.php">Log Out</a></li>
-
+	        <li><a href="javascript:void(0)">Log Out</a></li>
+			
+			<li id="LogIn"> <div class="fb-login-button" data-scope="email,user_birthday,user_hometown,user_location,user_website,user_work_history,user_about_me
+			" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">Login</div>
+			
+			<li id="CheckStatus"><a href="javascript:void(0)">Check Status</a></li>
+			
 	      </ul>
 	    </div>
 	  </div>
@@ -84,33 +128,44 @@
 		
 		<div> 
 			<div class="info">Name: </div><div id="Name" class="info">
-                             <?php echo $userNode->getName(); ?>
-                        </div>
+                      <?php echo $userNode->getName(); ?>       
+            </div>
 		</div>
 		
 		<div>
 			<div class="info">Gender: </div><div id="Gender" class="info">
-
-                        </div>
+                       <?php 
+					   $graphObject = $response->getGraphObject();
+					   echo $userNode= $graphObject->getProperty("gender");
+					   
+					   ?>    
+            </div>
 		</div>
 
 		<div>
 			<div class="info">DOB: </div><div id="DOB" class="info">
-                           <?php echo $userNode->getBirthday(); ?>
-                        </div>
+                     <?php 
+				   $graphObject = $response->getGraphObject();
+				   $userNode= $graphObject->getProperty("birthday");
+				   
+				   ?>
+            </div>
 		</div>
 
 		<div> 
 			<div class="info">E-Mail: </div><div id="Email" class="info">
-
-                        </div>
+                    <?php 
+				   $graphObject = $response->getGraphObject();
+				   echo $userNode= $graphObject->getProperty("email");
+				   
+				   ?>       
+            </div>
 		</div>
 	</div>
 	
 	
-<div>
-<a href="logout.php"><input type="button" value="Logout"></input></a>
-</div>
+	<div id="detail"> </div>
+	
 
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="indexpage.js"></script>

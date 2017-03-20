@@ -12,7 +12,7 @@
   $helper = $fb->getRedirectLoginHelper();
 
   $permissions = ['email'];
-  $loginUrl = $helper->getLoginUrl('http://localhost/Codes/Intern/branch/indexpage.php', $permissions);
+  $loginUrl = $helper->getLoginUrl('http://localhost/hischip-1-Final/indexpage.php', $permissions);
 
 ?>
 
@@ -73,9 +73,8 @@
 		<div class="container-fluid">
 			<div class="col-md-4" id="Login">
 				<p id="Welcome">Welcome!</p>
-<?php
-    echo '<a href="' . htmlspecialchars($loginUrl) . '"><input id="loginButton" type="button" value="Login"></input></a>';
-?>
+                         <a href="<?php echo htmlspecialchars($loginUrl) ?>"><input id="loginButton" type="button" value="Login"></input></a>;
+
 		</div>
 
 

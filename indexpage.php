@@ -7,6 +7,8 @@
   'app_id' => '1751632425141071',
   'app_secret' => 'bdf548374ab9ddadf4392319efd57831',
   'default_graph_version' => 'v2.2',
+  'cookie' => true,
+  'status' => true,
   ]);
 
    // GETTING THE ACCESS TOKEN' PROCESS
@@ -25,7 +27,7 @@
     if (isset($accessToken)) {
       $_SESSION['facebook_access_token'] = (string) $accessToken;
     }
-      $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
+      $fb->setDefaultAccessToken(''.$_SESSION['facebook_access_token'].'');
 
 
       // retrieving data from fb part.
@@ -104,7 +106,7 @@
 	    </div>
 	    <div class="navbar-collapse collapse navbar-responsive-collapse">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="javascript:void(0)">My Friends</a></li>
+	        <li class="active"><a href="myfriends.php">My Friends</a></li>
 	      </ul>
 	      
 		  

@@ -10,24 +10,8 @@
   'cookie' => true,
   'status' => true,
   ]);
+  $fb->setDefaultAccessToken(''.$_SESSION['facebook_access_token'].'');
 
-   // GETTING THE ACCESS TOKEN' PROCESS
-    $helper = $fb->getRedirectLoginHelper();
-    try {
-      $accessToken = $helper->getAccessToken();
-    } catch(Facebook\Exceptions\FacebookResponseException $e) {
-          echo 'Graph returned an error: ' . $e->getMessage();
-      exit;
-    } catch(Facebook\Exceptions\FacebookSDKException $e) {
-          echo 'Facebook SDK returned an error: ' . $e->getMessage();
-      exit;
-    }
-
-    //SETTING THE ACCESS TOKEN TO OUR LOCAL PAGE or WEBSITE
-    if (isset($accessToken)) {
-      $_SESSION['facebook_access_token'] = (string) $accessToken;
-    }
-      $fb->setDefaultAccessToken(''.$_SESSION['facebook_access_token'].'');
 
 
       // retrieving data from fb part.
@@ -111,7 +95,7 @@
 	      
 		  
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="javascript:void(0)">Log Out</a></li>
+	        <li><a href="logout.php">Log Out</a></li>
 			
 			<li id="LogIn"> <div class="fb-login-button" data-scope="email,user_birthday,user_hometown,user_location,user_website,user_work_history,user_about_me
 			" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">Login</div>

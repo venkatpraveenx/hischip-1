@@ -12,7 +12,7 @@
   $helper = $fb->getRedirectLoginHelper();
 
   $permissions = ['email'];
-  $loginUrl = $helper->getLoginUrl('http://localhost/hischip-1-Final/indexpage.php', $permissions);
+  $loginUrl = $helper->getLoginUrl('http://localhost/hischip-1-Final/middlepage.php', $permissions);
 
 ?>
 

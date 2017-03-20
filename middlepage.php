@@ -27,7 +27,7 @@
       if (isset($accessToken)) {
         $_SESSION['facebook_access_token'] = (string)$accessToken;
       }
-
-header('Location: indexpage.php'); 
+//redirecting to indexpage.php
+header('Location: indexpage.php');
 
 ?>

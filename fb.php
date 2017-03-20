@@ -9,9 +9,12 @@
   'default_graph_version' => 'v2.2',
   ]);
 
-  $helper = $fb->getRedirectLoginHelper();
+  if(isset($_SESSION['facebook_access_token'])){
+    header('Location:indexpage.php');
+  }
+    $helper = $fb->getRedirectLoginHelper();
 
-  $permissions = ['email'];
+  $permissions = [];
   $loginUrl = $helper->getLoginUrl('http://localhost/hischip-1-Final/middlepage.php', $permissions);
 
 ?>
@@ -73,7 +76,7 @@
 		<div class="container-fluid">
 			<div class="col-md-4" id="Login">
 				<p id="Welcome">Welcome!</p>
-                         <a href="<?php echo htmlspecialchars($loginUrl) ?>"><input id="loginButton" type="button" value="Login"></input></a>;
+                         <a href="<?php echo htmlspecialchars($loginUrl) ?>"><input id="loginButton" type="button" value="Login"></input></a>
 
 		</div>
 

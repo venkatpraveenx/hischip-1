@@ -13,13 +13,13 @@
   if($_SESSION['facebook_access_token']){
        $fb->setDefaultAccessToken((string)$_SESSION['facebook_access_token']);
   }else{
-        header('Location: logout.php');
+        header('Location: fb.php');
   }
 
 
       // retrieving data from fb part.
       try {
-        $response = $fb->get('/me?fields=name,gender,birthday,email');
+        $response = $fb->get('/me?fields=name,gender,birthday,email,friends');
         $userNode = $response->getGraphUser();
       } catch(Facebook\Exceptions\FacebookResponseException $e) {
                echo 'Graph returned an error: ' . $e->getMessage();
@@ -99,12 +99,7 @@
 		  
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="logout.php">Log Out</a></li>
-			
-			<li id="LogIn"> <div class="fb-login-button" data-scope="email,user_birthday,user_hometown,user_location,user_website,user_work_history,user_about_me
-			" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false">Login</div>
-			
-			<li id="CheckStatus"><a href="javascript:void(0)">Check Status</a></li>
-			
+
 	      </ul>
 	    </div>
 	  </div>
@@ -147,14 +142,14 @@
 				   $graphObject = $response->getGraphObject();
 				   echo $userNode= $graphObject->getProperty("email");
 				   
-				   ?>       
+				   ?>
             </div>
 		</div>
 	</div>
-	
-	
+
+
 	<div id="detail"> </div>
-	
+
 
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="indexpage.js"></script>

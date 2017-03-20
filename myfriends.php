@@ -14,10 +14,10 @@
   if($_SESSION['facebook_access_token']){
        $fb->setDefaultAccessToken((string)$_SESSION['facebook_access_token']);
   }else{
-        header('Location: logout.php');
+        header('Location: fb.php');
   }
 
-
+ 
 
 ?>
 

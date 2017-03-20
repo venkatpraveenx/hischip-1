@@ -15,7 +15,7 @@
     $helper = $fb->getRedirectLoginHelper();
 
   $permissions = [];
-  $loginUrl = $helper->getLoginUrl('http://localhost/hischip-1-Final/middlepage.php', $permissions);
+  $loginUrl = $helper->getLoginUrl('http://localhost/Codes/Intern/final/middlepage.php', $permissions);
 
 ?>
 
@@ -65,21 +65,25 @@
 
 
 
-
-
-		<div class="container-fluid" id="Test">
-			<h1>columns</h1>
-			<div class="col-md-4" style="background-color: #FF9999">Working?</div>
-			<a href="#">This is a link</a>
-		</div>
-
 		<div class="container-fluid">
 			<div class="col-md-4" id="Login">
 				<p id="Welcome">Welcome!</p>
-                         <a href="<?php echo htmlspecialchars($loginUrl) ?>"><input id="loginButton" type="button" value="Login"></input></a>
+                <span id="LoginSpan"><a id="LoginLink" href="<?php echo htmlspecialchars($loginUrl) ?>"><input id="loginButton" type="button" 					value="Login"></input></span>
+				</a>
 
 		</div>
 
+	<div id="full">
+		<div id="middle">
+			<div class="jumbotron" id="log">
+				<h1>Welcome!</h1>
+				<p>Please login via Facebook to continue</p>
+				<p><a class="btn btn-primary btn-lg" href="<?php echo htmlspecialchars($loginUrl) ?>">Log in
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
 
 
 

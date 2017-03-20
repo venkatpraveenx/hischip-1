@@ -1,19 +1,21 @@
-#Login{
-	
-	margin:15% 35% 0% 35%;
-	background-color:#FF9999;
-	height:40%;
+
+
+#full{
+	display:table;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color: #EEEEEE;
 }
 
-#Welcome{
-	
-	position:relative;
+#middle{
+	display:table-cell;
+	vertical-align:middle;
+}
+
+#log{
+	width:40%;
+	margin-left:auto;
+	margin-right:auto;
 	text-align:center;
-	padding-top:0.2em;
-	font-size: 2em;
-	font-family:cursive;
-}
-
-#Test{
-	display:none;
 }

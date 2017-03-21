@@ -81,17 +81,17 @@
 	
 
 
-	<div class="navbar navbar-default">
+	<div class="navbar navbar-default" role="navigation">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" 				data-target="#navigationbar">
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
 	      <a class="navbar-brand" href="javascript:void(0)">Site-Name</a>
 	    </div>
-	    <div class="navbar-collapse collapse navbar-responsive-collapse">
+	    <div class="collapse navbar-collapse" id="navigationbar">
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="myfriends.php">My Friends</a></li>
 	      </ul>

@@ -1,8 +1,9 @@
 .info{
 	display:inline-block;
+	padding:0.1em;
 }
 
 .well{
-	width:40%;
+	display:table;
 	margin:10% auto;
 }

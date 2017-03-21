@@ -14,8 +14,8 @@
   }
     $helper = $fb->getRedirectLoginHelper();
 
-  $permissions = [];
-  $loginUrl = $helper->getLoginUrl('http://localhost/Codes/Intern/final/middlepage.php', $permissions);
+  $permissions = ['user_friends'];
+  $loginUrl = $helper->getLoginUrl('http://192.168.1.7/Codes/Intern/final/middlepage.php', $permissions);
 
 ?>
 
@@ -63,15 +63,6 @@
 		 });
 		</script>
 
-
-
-		<div class="container-fluid">
-			<div class="col-md-4" id="Login">
-				<p id="Welcome">Welcome!</p>
-                <span id="LoginSpan"><a id="LoginLink" href="<?php echo htmlspecialchars($loginUrl) ?>"><input id="loginButton" type="button" 					value="Login"></input></span>
-				</a>
-
-		</div>
 
 	<div id="full">
 		<div id="middle">

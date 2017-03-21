@@ -17,25 +17,6 @@
   }else{
         header('Location: fb.php');
   }
-
-
-  try {
-    
-      $response = $fb->get('/me?fields=friends');
-      $userNode = $response->getGraphUser();
-	  
-	  foreach($userNode["friends"] as $value){
-	  	
-		  echo $value;
-	  }
-	 
-  } catch(Facebook\Exceptions\FacebookResponseException $e) {
-           echo 'Graph returned an error: ' . $e->getMessage();
-    exit;
-  } catch(Facebook\Exceptions\FacebookSDKException $e) {
-           echo 'Facebook SDK returned an error: ' . $e->getMessage();
-    exit;
-  }
  
 
 ?>
@@ -57,8 +38,8 @@
 	  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	  <!-- Bootstrap Material Design -->
-	  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/FezVrasta/bootstrap-material-design/master/dist/css/bootstrap-material-design.css">
-	  
+	   <link rel="stylesheet" type="text/css" href="material/css/bootstrap-material-design.css">
+	   <link rel="stylesheet" type="text/css" href="material/css/ripples.min.css">
 	  <link rel="stylesheet" type="text/css" href="myfriends.css">
 	  
 </head>
@@ -88,7 +69,9 @@
  
 </script>
 	
-	
+<script>
+   $.material.init();
+</script>	
 	
 
 
@@ -102,7 +85,7 @@
 	      </button>
 	      <a class="navbar-brand" href="javascript:void(0)">Site-Name</a>
 	    </div>
-	    <div class="navbar-collapse collapse navbar-responsive-collapse">
+	    <div class="navbar-responsive-collapse">
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="indexpage.php">Index Page</a></li>
 	      </ul>
@@ -117,13 +100,33 @@
 	</div>
 	
 	
-	<div id="Friends">
+	<div class="well">
 		
-		<p>Para</p>
-	
-   	  	
+		<h2>Friend List</h2>
+		
+  	  <?php 
+
+		  try {
+    		  
+			  $response = $fb->get('/me?fields=friends');
+			  $userNode = $response->getGraphUser();
+	  
+			  foreach($userNode["friends"] as $value){
+	  	
+			  echo $value["name"];
+		  }
+	 
+		  } catch(Facebook\Exceptions\FacebookResponseException $e) {
+	           echo 'Graph returned an error: ' . $e->getMessage();
+	    	   exit;
+		  } catch(Facebook\Exceptions\FacebookSDKException $e) {
+	           echo 'Facebook SDK returned an error: ' . $e->getMessage();
+	    	   exit;
+	 	  }
 	   
+	   ?>
 	
+	</div>
 		
 	
 	</div>

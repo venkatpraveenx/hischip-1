@@ -46,7 +46,8 @@
 	  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	  <!-- Bootstrap Material Design -->
-	  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/FezVrasta/bootstrap-material-design/master/dist/css/bootstrap-material-design.css">
+	   <link rel="stylesheet" type="text/css" href="material/css/bootstrap-material-design.css">
+	   <link rel="stylesheet" type="text/css" href="material/css/ripples.min.css">
 	  
 	  <link rel="stylesheet" type="text/css" href="indexpage.css">
 	  
@@ -84,14 +85,14 @@
 	<div class="navbar navbar-default" role="navigation">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" 				data-target="#navigationbar">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" 				data-target=".navbar-responsive-collapse">
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
 	      <a class="navbar-brand" href="javascript:void(0)">Site-Name</a>
 	    </div>
-	    <div class="collapse navbar-collapse" id="navigationbar">
+	    <div class="navbar-responsive-collapse">
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="myfriends.php">My Friends</a></li>
 	      </ul>
@@ -109,6 +110,8 @@
 	
 	
 	<div class="well">
+		
+		<h2>User Info</h2>
 		
 		<div> 
 			<div class="info">Name: </div><div id="Name" class="info">
@@ -147,8 +150,6 @@
 		</div>
 	</div>
 
-
-	<div id="detail"> </div>
 
 
 <script type="text/javascript" src="jquery.js"></script>

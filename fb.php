@@ -33,7 +33,8 @@
 	  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	  <!-- Bootstrap Material Design -->
-	  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/FezVrasta/bootstrap-material-design/master/dist/css/bootstrap-material-design.css">
+	   <link rel="stylesheet" type="text/css" href="material/css/bootstrap-material-design.css">
+	   <link rel="stylesheet" type="text/css" href="material/css/ripples.min.css">
 
 	  <link rel="stylesheet" type="text/css" href="styling.css">
 </head>
